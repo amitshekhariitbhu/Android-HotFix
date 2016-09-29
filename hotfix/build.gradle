@@ -1,0 +1,22 @@
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.github.stephanenicolas.javassist:javassist-build-plugin-api:1.0.0'
+    compile 'com.github.stephanenicolas.morpheus:morpheus-plugin:1.0.7'
+    compile 'com.github.stephanenicolas.morpheus:morpheus-commons:1.0.7'
+    compile gradleApi()
+    compile localGroovy()
+}

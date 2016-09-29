@@ -1,8 +1,24 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'hotfix'
+
+buildscript {
+    repositories {
+        mavenCentral()
+
+        // NOTE: This is only needed when developing the plugin!
+        mavenLocal()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath project(':hotfix')
+    }
+}
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    buildToolsVersion "24.0.1"
     defaultConfig {
         applicationId "com.hotfix.sample"
         minSdkVersion 15
@@ -17,6 +33,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
 }
 
 dependencies {
@@ -24,6 +44,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:appcompat-v7:24.2.0'
     testCompile 'junit:junit:4.12'
+    apt project(':hotfix')
 }
