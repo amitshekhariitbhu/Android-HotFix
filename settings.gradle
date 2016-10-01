@@ -1,1 +1,1 @@
-include ':app', ':hotfix'
+include ':app', ':hotfix-plugin'
