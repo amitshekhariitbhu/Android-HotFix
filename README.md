@@ -3,7 +3,7 @@ Android HotFix Library For On The Fly Bug Fix. Bug fix without updating APK.
 
 # THIS LIBRARY IS UNDER DEVELOPMENT
 
-## [My Personal Blog - amitshekhar.me](https://amitshekhar.me/blog) - High-quality content to learn Android concepts.
+## [Outcome School Blog](https://outcomeschool.com/blog) - High-quality content to learn Android concepts.
 
 You can connect with me on:
 
